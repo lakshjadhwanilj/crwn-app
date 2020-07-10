@@ -12,7 +12,10 @@ const Header = () => {
                 <Logo className='logo' />
             </Link>
             <div className='options'>
-                <Link className='option' to='/shop'>SHOP</Link>
+                <Link className='option' to='/shop'>
+                    SHOP{' '}
+                    <i class="fab fa-shopify"></i>
+                </Link>
                 <Link className='option' to='/shop'>CONTACT</Link>
             </div>
         </div>
