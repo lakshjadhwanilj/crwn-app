@@ -1,4 +1,5 @@
 import React from 'react';
+// COMPONENTS
 import MenuItem from '../menu-item/menu-item.components';
 // CSS
 import './directory.styles.scss';
