@@ -21,21 +21,21 @@ const Header = ({ currentUser }) => {
                     CONTACT{' '}
                     <i className="far fa-address-card"></i>
                 </Link>
-                <Link>
-                    {
-                        currentUser ? (
-                            <div className='option' onClick={() => auth.signOut()}>
-                                SIGN OUT{' '}
-                                <i className="fas fa-sign-out-alt"></i>
-                            </div>
-                        ) : (
-                                <Link className='option' to='/signin'>
-                                    SIGN IN{' '}
-                                    <i className="fas fa-sign-in-alt"></i>
-                                </Link>
-                            )
-                    }
-                </Link>
+
+                {
+                    currentUser ? (
+                        <div className='option' onClick={() => auth.signOut()}>
+                            SIGN OUT{' '}
+                            <i className="fas fa-sign-out-alt"></i>
+                        </div>
+                    ) : (
+                            <Link className='option' to='/signin'>
+                                SIGN IN{' '}
+                                <i className="fas fa-sign-in-alt"></i>
+                            </Link>
+                        )
+                }
+
             </div>
         </div>
     );
