@@ -1,9 +1,14 @@
 .sign-up {
-    display: flex;
-    flex-direction: column;
-    width: 380px;
+    min-width: 18.75rem;
+    // max-width: 31.25rem;
+    margin: auto;
 
     .title {
         margin: 10px 0;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 // COMPONENTS
 import FormInput from '../form-input/form-input.component';
@@ -9,7 +10,6 @@ import './sign-in.styles.scss';
 class SignIn extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             email: '',
             password: ''
@@ -35,8 +35,9 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className='sign-in'>
-                <h2>I already have an account</h2>
-                <span>Sign in with your email and password.</span>
+                <h2 className='title text-center'>
+                    <i className="fas fa-lock"></i> SIGN IN
+                </h2>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput
@@ -56,12 +57,20 @@ class SignIn extends React.Component {
                         required
                     />
                     <div className='buttons'>
-                        <CustomButton type='submit'>Sign In</CustomButton>
-                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-                            Sign In With Google
-                        </CustomButton>
+                        <div className=''>
+                            <CustomButton type='submit'>Sign In</CustomButton>
+                        </div>
+                        <div className=''>
+                            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                                Sign In With Google
+                            </CustomButton>
+                        </div>
                     </div>
                 </form>
+                <div className='border-top border-dark mt-2 pt-2 text-center'>
+                    <p> Don't have an account! <Link to='/signup' className='text-primary'>Sign Up Here!</Link>
+                    </p>
+                </div>
             </div>
         );
     }
