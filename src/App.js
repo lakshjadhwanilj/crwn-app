@@ -44,7 +44,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header />
-        <div className='container'>
+        <div className='container main-container'>
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route path='/shop' component={ShopPage} />

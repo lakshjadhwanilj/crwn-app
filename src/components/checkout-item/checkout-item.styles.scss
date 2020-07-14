@@ -1,15 +1,9 @@
 .checkout-item {
     width: 100%;
-    display: flex;
-    min-height: 100px;
-    border-bottom: 1px solid darkgrey;
-    padding: 15px 0;
-    font-size: 20px;
-    align-items: center;
 
     .image-container {
-        width: 23%;
-        padding-right: 15px;
+        width: 6.25rem;
+        height: 6.25rem;
 
         img {
             width: 100%;
@@ -17,17 +11,10 @@
         }
     }
 
-    .name,
-    .quantity,
-    .price {
-        width: 23%;
-    }
-
     .quantity {
         display: flex;
 
-        .add,
-        .sub {
+        .arrow {
             cursor: pointer;
         }
 

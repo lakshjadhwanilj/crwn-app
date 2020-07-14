@@ -9,42 +9,57 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 // CSS
-import './header.styles.scss';
+import { OptionDiv } from './header.styles';
 // LOGO
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 const Header = ({ currentUser, hidden }) => {
     return (
-        <div className='header'>
-            <Link className='logo-container' to='/'>
-                <Logo className='logo' />
-            </Link>
-            <div className='options'>
-                <Link className='option' to='/shop'>
-                    SHOP{' '}
-                    <i className="fab fa-shopify"></i>
+        <nav className='navbar navbar-expand-md navbar-light bg-light fixed-top'>
+            <div className='container'>
+                <Link to='/' className='navbar-brand'>
+                    <Logo className='logo' />
                 </Link>
-                <Link className='option' to='/shop'>
-                    CONTACT{' '}
-                    <i className="far fa-address-card"></i>
-                </Link>
-                {
-                    currentUser ? (
-                        <div className='option' onClick={() => auth.signOut()}>
-                            SIGN OUT{' '}
-                            <i className="fas fa-sign-out-alt"></i>
-                        </div>
-                    ) : (
-                            <Link className='option' to='/signin'>
-                                SIGN IN{' '}
-                                <i className="fas fa-sign-in-alt"></i>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className='collapse navbar-collapse' id='navbar'>
+                    <ul className='navbar-nav ml-auto'>
+                        <li className='nav-item'>
+                            <Link to='/shop' className='nav-link'>
+                                SHOP{' '}
+                                <i className="fab fa-shopify"></i>
                             </Link>
-                        )
-                }
-                <CartIcon />
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/shop' className='nav-link'>
+                                CONTACT{' '}
+                                <i className="far fa-address-card"></i>
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            {
+                                currentUser ? (
+                                    <OptionDiv onClick={() => auth.signOut()} className='nav-link'>
+                                        SIGN OUT{' '}
+                                        <i className="fas fa-sign-out-alt"></i>
+                                    </OptionDiv>
+                                ) : (
+                                        <Link to='/signin' className='nav-link'>
+                                            SIGN IN{' '}
+                                            <i className="fas fa-sign-in-alt"></i>
+                                        </Link>
+                                    )
+                            }
+                        </li>
+                        <li className='nav-item'>
+                            <CartIcon className='nav-link' />
+                        </li>
+                    </ul>
+                </div>
+                {hidden ? null : <CartDropdown />}
             </div>
-            {hidden ? null : <CartDropdown />}
-        </div>
+        </nav>
     );
 }
 

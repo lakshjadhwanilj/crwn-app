@@ -7,25 +7,25 @@ import './checkout-item.styles.scss';
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
     return (
-        <div className='checkout-item'>
-            <div className='image-container'>
+        <tr className='checkout-item'>
+            <th className='image-container' scope='row'>
                 <img src={imageUrl} alt="item" />
-            </div>
-            <span className='name'>{name}</span>
-            <span className='quantity'>
-                <div className='sub' onClick={() => removeItem(cartItem)}>
-                    <i className='fas fa-minus'></i>
+            </th>
+            <td className='name'>{name}</td>
+            <td className='quantity'>
+                <div className='arrow' onClick={() => removeItem(cartItem)}>
+                    &#10094;
                 </div>
                 <span className='value'>{quantity}</span>
-                <div className='add' onClick={() => addItem(cartItem)}>
-                    <i className='fas fa-plus'></i>
+                <div className='arrow' onClick={() => addItem(cartItem)}>
+                    &#10095;
                 </div>
-            </span>
-            <span className='price'>${price}</span>
-            <div className='remove-button' onClick={() => clearItem(cartItem)}>
+            </td>
+            <td className='price'>${price}</td>
+            <td className='remove-button' onClick={() => clearItem(cartItem)}>
                 <i className='fas fa-trash'></i>
-            </div>
-        </div>
+            </td>
+        </tr>
     );
 }
 
