@@ -11,7 +11,7 @@ const FormInput = ({ handleChange, label, ...otherProps }) => {
                     {label === 'Email' && <i className="far fa-envelope"></i>}
                     {label === 'Password' && <i className="fas fa-lock"></i>}
                     {label === 'Confirm Password' && <i className="fas fa-lock"></i>}
-                    {label === 'Display Name' && <i className="far fa-envelope"></i>}
+                    {label === 'Display Name' && <i class="far fa-user"></i>}
                 </span>
             </div>
             <input

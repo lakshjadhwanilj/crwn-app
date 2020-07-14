@@ -3,8 +3,6 @@ import { Route } from 'react-router-dom';
 // COMPONENTS
 import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
 import CollectionPage from '../collection/collection.component';
-// CSS
-import './shop.styles.scss';
 
 const ShopPage = ({ match }) => (
     <div className='shop-page'>
